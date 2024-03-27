@@ -1,8 +1,14 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renders Workout Tracker heading", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const headingElement = screen.getByText(/Workout Tracker/i);
+  expect(headingElement).toBeInTheDocument();
+});
+
+test("renders NewWorkoutButton when modalState is false", () => {
+  render(<App />);
+  const newWorkoutButtonElement = screen.getByTestId("new-workout-button");
+  expect(newWorkoutButtonElement).toBeInTheDocument();
 });
